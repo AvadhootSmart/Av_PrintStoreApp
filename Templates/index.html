@@ -1,0 +1,83 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "Styles.css" %}">
+    <title>PrintShop</title>
+</head>
+
+<body>
+    <div class="nav">
+        <h2>ShopName</h2>
+    </div>
+
+    <div id="main">
+        <form method="post" id="OrderForm" action="{% url "checkout" %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div id="type">
+                <h1 class="heading">Select Your Type</h1>
+
+                <div class="types">
+                    <div>
+                        <input type="radio" name="ColorType" id="b&w" value="B&W" class="orienputs">
+                        <label for="b&w" class="card">
+                            <div>
+                                <h2 class="card-heading" id="BW">Black & White</h2>
+                                <div class="checks hide" id="checkBW">
+                                    <input type="radio" name="orientation" id="SS-C" value="Single">
+                                    <label for="SS-C">Single-Side:2RS/-</label>
+                                    <input type="radio" name="orientation" id="DS-C" value="Double">
+                                    <label for="DS-C">Double-Side:12RS/-</label>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="ColorType" id="col" value="Color">
+                        <label for="col" class="card" >
+                            <div>
+                                <h2 class="card-heading" id="Color">Colour</h2>
+                                <div class="checks hide" id="checkCol">
+                                    <input type="radio" name="orientation" id="SS-C" value="Single">
+                                    <label for="SS-C">Single-Side:2RS/-</label>
+                                    <input type="radio" name="orientation" id="DS-C" value="Double">
+                                    <label for="DS-C">Double-Side:12RS/-</label>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Files">
+                <h2 class="heading">Upload Files</h2>
+
+                <div class="Upload">
+                    <input type="text" placeholder="Your name" id="name" name="name">
+                    
+                    <div id="file">
+                        <svg id="fileimg" xmlns="http://www.w3.org/2000/svg" width="72" height="54" viewBox="0 0 72 54"
+                            fill="none">
+                            <path
+                                d="M65.1085 8.98049H38.1671L29.1866 0H6.73537C4.94904 0 3.23587 0.709617 1.97274 1.97274C0.709617 3.23587 0 4.94904 0 6.73537L0 47.1476C0 48.9339 0.709617 50.6471 1.97274 51.9102C3.23587 53.1733 4.94904 53.8829 6.73537 53.8829H65.1085C66.8949 53.8829 68.608 53.1733 69.8712 51.9102C71.1343 50.6471 71.8439 48.9339 71.8439 47.1476V15.7159C71.8439 13.9295 71.1343 12.2164 69.8712 10.9532C68.608 9.6901 66.8949 8.98049 65.1085 8.98049ZM50.4451 32.5543C50.4451 33.1497 50.2085 33.7208 49.7875 34.1418C49.3665 34.5629 48.7954 34.7994 48.2 34.7994H39.2195V43.7799C39.2195 44.3753 38.9829 44.9464 38.5619 45.3674C38.1409 45.7885 37.5698 46.025 36.9744 46.025H34.7292C34.1338 46.025 33.5627 45.7885 33.1417 45.3674C32.7206 44.9464 32.4841 44.3753 32.4841 43.7799V34.7994H23.5036C22.9082 34.7994 22.3371 34.5629 21.9161 34.1418C21.495 33.7208 21.2585 33.1497 21.2585 32.5543V30.3091C21.2585 29.7137 21.495 29.1426 21.9161 28.7216C22.3371 28.3006 22.9082 28.064 23.5036 28.064H32.4841V19.0835C32.4841 18.4881 32.7206 17.917 33.1417 17.496C33.5627 17.075 34.1338 16.8384 34.7292 16.8384H36.9744C37.5698 16.8384 38.1409 17.075 38.5619 17.496C38.9829 17.917 39.2195 18.4881 39.2195 19.0835V28.064H48.2C48.7954 28.064 49.3665 28.3006 49.7875 28.7216C50.2085 29.1426 50.4451 29.7137 50.4451 30.3091V32.5543Z"
+                                fill="#EAEAEE" fill-opacity="0.666667" />
+                        </svg>
+                        <h3>Upload File</h3>
+                    </div>
+
+                    <input type="file" name="UploadFile" id="files" accept=".pdf,.docx">
+                    <button type="submit" id="btn-submit">Submit</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <script src="{% static "Script.js" %}"></script>
+</body>
+
+</html>

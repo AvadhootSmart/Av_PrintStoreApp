@@ -1,0 +1,193 @@
+/* Color Pallete
+1.EAEAEA - Text
+2.313D5A-BG
+3.183642-Elems
+4.CBC5EA-??
+5.73628A-???
+font-family:Koulen;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+
+body {
+  background-color: blue;
+}
+
+@media screen and (max-width: 767px) and (max-height: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: Koulen, sans-serif;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #313d5a;
+    overflow-x: hidden;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 7vh;
+    font-size: 1.5rem;
+    background-color: #183642;
+    color: rgba(234, 234, 234, 1);
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 500;
+    /* margin-top: 0.5vh; */
+    color: #cbc5ea;
+  }
+
+  #main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .Files {
+    /* background-color: red; */
+    height: 40vh;
+  }
+  #type {
+    /* background-color: aqua; */
+    height: 30vh;
+  }
+  .types {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: red; */
+    height: 25vh;
+  }
+  .types input[type="radio"] {
+    display: none;
+  }
+  .types input[type="radio"]:checked + .card {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.9);
+    transform: scale(1.1); /* Corrected property */
+  }
+
+  .card {
+    background-color: #183642;
+    height: 17vh;
+    width: 45vw;
+    display: flex;
+    /* width: 10.25rem; */
+    /* height: 8.625rem; */
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 2% 0;
+    transition: all 0.3s ease;
+  }
+
+  .card-heading {
+    color: #CBC5EA;
+    text-align: center;
+    font-family: Koulen;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 112.915%;
+  }
+  .card-headingS{
+    font-size: 1.5rem;
+    line-height: normal;
+    
+  }
+  .Upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh;
+    width: 100vw;
+    /* background-color: pink; */
+  }
+
+  .checks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease-in;
+  }
+  .hide{
+    opacity: 0;
+    display: none;
+  }
+  .show{
+    opacity: 1;
+    display: flex;
+  }
+
+  .checks input[type="radio"] {
+    display: none;
+  }
+  .checks label {
+    text-align: left;
+    color: #666;
+    font-family: Koulen;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .checks input[type="radio"]:checked + label {
+    color: #fff;
+  }
+
+  #name {
+    /* margin-top: 2vh; */
+    padding: 5%;
+    font-size: 1.2rem;
+    border-style: none;
+    width: 85vw;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 3px 3px 0px 0px;
+    border-bottom: 1px solid #4d4d4d;
+    background: #183642;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  #file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    margin-top: 2.5vh;
+    width: 85vw;
+    height: 174px;
+    border-style: none;
+    flex-shrink: 0;
+    border-radius: 3px 3px 0px 0px;
+    border-bottom: 1px solid #4d4d4d;
+    background: #183642;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #666;
+  }
+
+  #files {
+    /* background-color: red; */
+    width: 85vw;
+    min-height: 20vh;
+    position: relative;
+    z-index: 100;
+    bottom: 65%;
+    opacity: 0;
+  }
+
+  #btn-submit {
+    margin-top: -15vh;
+    width: 80vw;
+    height: 10vh;
+    border-radius: 100px;
+    background-color: #cbc5ea;
+    color: #4d4d4d;
+    font-size: 1.5rem;
+  }
+}
