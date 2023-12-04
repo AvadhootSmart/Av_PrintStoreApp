@@ -1,11 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <link rel="stylesheet" href="{% static "Checkout.css" %}">
+    <title>PrintShop||Checkout</title>
 </head>
+
 <body>
-    Your data is submitted successfully
+    <div class="nav">
+        <h2>ShopNameSSSS</h2>
+    </div>
+    <div id="main"> 
+        <h1 class="heading">Order Summary</h1>   
+          <div class="card">
+            <p>Name: {{name.0}}</p>
+            <p>Orientation: {{orientation.0}} page</p>
+            <p>Color-Type: {{color_type.0}}</p>
+            <p>File: {{filename}}</p>
+            {% if PageCount and Amount %}
+                <p>Number of pages: {{PageCount}}</p>
+                <p>Amount to pay: {{Amount}} RS/-</p>
+            {% endif %}
+        </div> 
+        <a href="/">Add Files</a>
+        <a href="/payment">Payment</a>
+    </div>
+    <script src="{% static "Script.js" %}"></script>
 </body>
+
 </html>

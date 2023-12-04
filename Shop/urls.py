@@ -5,5 +5,4 @@ from Shop import views
 urlpatterns = [
     path("",views.Home, name="Home"),
     path("checkout/",views.checkout, name="checkout"),
-
 ]

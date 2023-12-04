@@ -29,3 +29,25 @@ class Order(models.Model):
 
     def __str__(self):
         return self.name
+
+class BlackAndWhitePrice(models.Model):
+    Single_Page_Cost = models.IntegerField()
+    Double_Page_Cost = models.IntegerField()
+     
+    def __str__(self):
+        return f'Single:{self.Single_Page_Cost}RS   Double:{self.Double_Page_Cost}RS'
+    
+
+class ColorPrice(models.Model):
+    Single_Page_Cost = models.IntegerField()
+    Double_Page_Cost = models.IntegerField()
+    
+    def __str__(self):
+        return f'Single:{self.Single_Page_Cost}RS   Double:{self.Double_Page_Cost}RS'
+    
+
+class Sales(models.Model):
+    Order_amount = models.IntegerField()
+    
+    def __str__(self):
+        return "Sales"

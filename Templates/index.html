@@ -20,7 +20,9 @@
             
             <div id="type">
                 <h1 class="heading">Select Your Type</h1>
-
+                {% if error in error %}
+                    <h1 class ="error">{{error}}</h1>
+                {% endif %}
                 <div class="types">
                     <div>
                         <input type="radio" name="ColorType" id="b&w" value="B&W" class="orienputs">
@@ -29,9 +31,9 @@
                                 <h2 class="card-heading" id="BW">Black & White</h2>
                                 <div class="checks hide" id="checkBW">
                                     <input type="radio" name="orientation" id="SS-B" value="Single">
-                                    <label for="SS-B">Single-Side:2RS/-</label>
+                                    <label for="SS-B">Single-Side:{{Prices.BlackWhiteSP}}RS/-</label>
                                     <input type="radio" name="orientation" id="DS-B" value="Double">
-                                    <label for="DS-B">Double-Side:12RS/-</label>
+                                    <label for="DS-B">Double-Side:{{Prices.BlackWhiteDP}}RS/-</label>
                                 </div>
                             </div>
                         </label>
@@ -44,9 +46,9 @@
                                 <h2 class="card-heading" id="Color">Colour</h2>
                                 <div class="checks hide" id="checkCol">
                                     <input type="radio" name="orientation" id="SS-C" value="Single">
-                                    <label for="SS-C">Single-Side:2RS/-</label>
+                                    <label for="SS-C">Single-Side:{{Prices.ColorSP}}RS/-</label>
                                     <input type="radio" name="orientation" id="DS-C" value="Double">
-                                    <label for="DS-C">Double-Side:12RS/-</label>
+                                    <label for="DS-C">Double-Side:{{Prices.ColorDP}}RS/-</label>
                                 </div>
                             </div>
                         </label>
@@ -58,7 +60,7 @@
                 <h2 class="heading">Upload Files</h2>
 
                 <div class="Upload">
-                    <input type="text" placeholder="Your name" id="name" name="name">
+                    <input type="text" placeholder="Your Full name" id="name" name="name" required>
                     
                     <div id="file">
                         <svg id="fileimg" xmlns="http://www.w3.org/2000/svg" width="72" height="54" viewBox="0 0 72 54"
@@ -70,7 +72,7 @@
                         <h3>Upload File</h3>
                     </div>
 
-                    <input type="file" name="UploadFile" id="files" accept=".pdf,.docx">
+                    <input type="file" name="UploadFile" id="files" accept=".pdf,.docx,.png,.jpeg">
                     <button type="submit" id="btn-submit">Submit</button>
                 </div>
 
